@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+
+{% block body %}
+<hr>
+    Please choose a student<b></b>
+    <form action="show_student" method="post">
+        <!-- pull down list -->
+        <select name = "cwid" id = "">
+            {% for student in students %}
+                <option value="{{ student.cwid}}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+{% endblock %}
